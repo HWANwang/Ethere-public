@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta name="description" content="Ethere 移动端应用">
+    <title>Ethere</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./brand-icon.png" type="image/png">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./demo.css">
+  </head>
+  <body>
+    <main class="app-shell" data-app-shell>
+      <header class="topbar">
+        <button class="icon-button space-shortcut" data-open-space type="button" aria-label="打开空间">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 10 8.5-7 8.5 7"/><path d="M5.5 9v11h13V9M9 20v-6h6v6"/></svg>
+        </button>
+        <button class="icon-button" data-back type="button" aria-label="返回聊天" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <button class="identity" data-open-settings type="button" aria-label="打开助手设置">
+          <span><i class="status-dot" data-connection-dot data-header-connection></i><strong data-page-title>Ethere</strong></span>
+          <svg class="identity__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+        <button class="icon-button" data-open-timeline type="button" aria-label="打开时间线">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 8h3m2 0h3m-8 4h3"/></svg>
+        </button>
+        <button class="icon-button" data-space-add type="button" aria-label="新建空间记录" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button class="icon-button" data-open-categories type="button" aria-label="管理事件标签" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5v6.8L12.7 21 21 12.7 12.3 4H5.5A1.5 1.5 0 0 0 4 5.5Z"/><circle cx="8.5" cy="8.5" r="1.25"/></svg>
+        </button>
+      </header>
+
+      <div class="view-stack">
+        <section class="view view--chat is-active" data-view-panel="chat" aria-label="聊天">
+          <section class="conversation" data-message-list aria-live="polite" aria-label="聊天记录"></section>
+          <button class="chat-jump-latest" data-jump-latest type="button" aria-label="回到最新消息" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6"/></svg>
+          </button>
+          <div class="typing" data-typing hidden><div class="typing__bubble"><i></i><i></i><i></i></div></div>
+          <form class="composer" data-composer>
+            <div class="composer-quote" data-quote-preview hidden><span class="composer-quote__text" data-quote-text></span><button type="button" data-cancel-quote aria-label="取消引用">×</button></div>
+            <div class="attachment-preview" data-attachment-preview hidden></div>
+            <input data-image-input type="file" accept="image/*" multiple hidden>
+            <input data-file-input type="file" accept=".pdf,.docx,.txt,.md" multiple hidden>
+            <button class="composer__utility" data-add-image type="button" aria-label="添加附件" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <label class="composer__field"><span class="sr-only">输入消息</span><textarea data-message-input rows="1" maxlength="2000"></textarea></label>
+            <button class="send-button" data-send type="submit" aria-label="发送消息" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3-5-7-2Z"/></svg>
+            </button>
+            <div class="composer-actions" data-attachment-actions hidden>
+              <div class="composer-actions__inner">
+                <button type="button" data-choose-image><span aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4a2 2 0 0 0-3 0l-9 9"/></svg></span>图片</button>
+                <button type="button" data-choose-file><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h8"/></svg></span>文件</button>
+                <button type="button" data-start-voice-call><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5c.6-.6 1.6-.6 2.1.1l2 2.6c.4.5.4 1.2 0 1.7l-1.3 1.4a15 15 0 0 0 4.9 4.9l1.4-1.3c.5-.4 1.2-.4 1.7 0l2.6 2c.7.5.7 1.5.1 2.1l-1.4 1.5c-.6.7-1.5 1-2.4.9C10.6 20.9 3.1 13.4 3.5 6.9c0-.9.3-1.8 1-2.4L7 3.5Z"/></svg></span>语音通话</button>
+                <button type="button" data-open-divination><span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="8" r="4"/><circle cx="12" cy="16" r="4"/></svg></span>起卦</button>
+              </div>
+            </div>
+          </form>
+          <section class="divination-sheet" data-divination-sheet hidden role="region" aria-label="起卦工具">
+            <button class="divination-sheet__grip" data-divination-grip data-divination-expand type="button" aria-label="展开或收起起卦面板"><span></span></button>
+            <header class="divination-sheet__header"><button class="divination-sheet__close" data-divination-close type="button" aria-label="关闭起卦面板">×</button></header>
+            <div class="divination-sheet__modes" role="tablist" aria-label="起卦方式"><button type="button" role="tab" data-divination-mode="coins">六爻摇币</button><button type="button" role="tab" data-divination-mode="plum">梅花报数</button></div>
+            <div class="divination-sheet__content">
+              <section data-divination-coins aria-label="六爻摇币"><p class="divination-sheet__hint" data-divination-progress>第 1 / 6 摇 · 从下往上</p><div class="divination-coins" aria-label="三枚硬币"><span data-divination-coin>·</span><span data-divination-coin>·</span><span data-divination-coin>·</span></div><button class="divination-sheet__action" type="button" data-divination-cast>摇一次</button><ol class="divination-results" data-divination-results aria-label="六次摇币结果" hidden></ol></section>
+              <section data-divination-plum aria-label="梅花随机报数" hidden><div class="divination-numbers"><span data-divination-first>—</span><i aria-hidden="true">·</i><span data-divination-second>—</span></div><p class="divination-sheet__plum-summary" data-divination-plum-summary>点击后随机报两个数</p><button class="divination-sheet__action" type="button" data-divination-draw>随机报数</button></section>
+            </div>
+            <footer class="divination-sheet__footer"><button class="divination-sheet__reset" type="button" data-divination-reset hidden>重新开始</button><button class="divination-sheet__send" type="button" data-divination-send disabled>发给 Ethere</button></footer>
+          </section>
+        </section>
+        <section class="view scroll-view" data-view-panel="timeline" aria-label="时间线" hidden></section>
+        <section class="view scroll-view" data-view-panel="space" aria-label="空间" hidden></section>
+        <section class="view scroll-view" data-view-panel="settings" aria-label="设置" hidden></section>
+      </div>
+
+      <section class="space-lightbox" data-space-lightbox hidden aria-label="图片预览" role="dialog" aria-modal="true"><button class="space-lightbox-close" type="button" data-close-space-lightbox aria-label="关闭图片预览"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div data-space-lightbox-content></div></section>
+
+      <section class="voice-call" data-voice-call hidden aria-label="语音通话" role="dialog" aria-modal="true">
+        <div class="voice-call__content">
+          <div class="voice-call__identity"><img src="./brand-icon.png" alt="" aria-hidden="true"><strong data-boss-name>Ethere</strong><p data-voice-call-state>准备通话…</p></div>
+          <div class="voice-call__actions">
+            <button type="button" data-voice-call-output aria-label="切换音频输出"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9c1.5 1 1.5 5 0 6m3-9c3 3 3 9 0 12"/></svg><span>音频</span></button>
+            <button class="voice-call__hangup" type="button" data-voice-call-end aria-label="挂断"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c5-4 13-4 18 0l-2 4-3-1v-3a11 11 0 0 0-8 0v3l-3 1-2-4Z"/></svg><span>挂断</span></button>
+          </div>
+        </div>
+        <div class="voice-call__routes" data-voice-call-routes hidden><button type="button" class="voice-call__routes-backdrop" data-close-voice-routes aria-label="关闭音频输出选择"></button><div class="voice-call__routes-sheet"><strong>音频输出</strong><div data-voice-route-options></div></div></div>
+      </section>
+
+      <button class="quote-action" data-quote-action type="button" hidden>引用</button>
+      <div class="toast" data-toast hidden></div>
+      <section class="bottom-sheet" data-approval-edit-sheet hidden>
+        <button class="sheet-backdrop" type="button" data-close-approval-edit aria-label="关闭建议修改"></button>
+        <form class="approval-edit-sheet" data-approval-edit-form>
+          <i></i><header><strong>修改事件标签建议</strong></header>
+          <div class="approval-level" data-approval-level>
+            <button type="button" data-approval-level-option="secondary">二级分类</button>
+            <button type="button" data-approval-level-option="primary">一级分类</button>
+          </div>
+          <label><span>名称</span><input data-approval-name maxlength="40" autocomplete="off"></label>
+          <fieldset data-approval-parent-field><legend>所属一级分类</legend><div class="approval-parent-options" data-approval-parent-options></div></fieldset>
+          <fieldset data-approval-color-field hidden><legend>颜色</legend><div class="category-color-options" data-approval-color-options></div></fieldset>
+          <button class="sheet-primary" type="submit">修改并采用</button>
+        </form>
+      </section>
+      <section class="bottom-sheet" data-memory-approval-edit-sheet hidden>
+        <button class="sheet-backdrop" type="button" data-close-memory-approval-edit aria-label="关闭记忆建议修改"></button>
+        <form class="approval-edit-sheet memory-approval-edit" data-memory-approval-edit-form>
+          <i></i><header><strong>修改记忆建议</strong></header>
+          <label><span>主题</span><input data-memory-approval-title maxlength="80" autocomplete="off"></label>
+          <label><span>完整内容</span><textarea data-memory-approval-content maxlength="20000"></textarea></label>
+          <label class="memory-approval-separate" data-memory-approval-separate-row hidden><input type="checkbox" data-memory-approval-separate><span data-memory-approval-separate-label>检测到相似记忆，仍作为新主题保存</span></label>
+          <button class="sheet-primary" type="submit">修改并采用</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./demo-bridge.js"></script>
+  </body>
+</html>

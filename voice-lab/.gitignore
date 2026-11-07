@@ -1,0 +1,8 @@
+.venv/
+models/
+runtime/
+secrets/
+*.log
+__pycache__/
+.pytest_cache/
+

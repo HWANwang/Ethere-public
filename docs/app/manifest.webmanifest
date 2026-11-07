@@ -1,0 +1,17 @@
+{
+  "name": "Ethere",
+  "short_name": "Ethere",
+  "description": "本地优先的个人 AI 伴侣",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1f3f9",
+  "theme_color": "#f6f7fb",
+  "icons": [
+    {
+      "src": "./brand-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

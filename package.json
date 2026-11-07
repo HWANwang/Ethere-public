@@ -1,0 +1,31 @@
+{
+  "name": "ethere",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "demo:start": "node scripts/serve-demo.mjs",
+    "demo:sync": "node scripts/sync-demo-frontend.mjs",
+    "watchdog": "node scripts/watchdog.mjs",
+    "test": "node --test \"test/*.test.mjs\"",
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "android:open": "cap open android",
+    "android:build": "cd android && gradlew.bat assembleDebug",
+    "android:build:release": "node scripts/build-android-release.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.4.299"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.0"
+  }
+}

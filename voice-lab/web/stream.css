@@ -1,0 +1,9 @@
+.conversation-footer {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 680px) {
+  .conversation-footer {
+    gap: 10px 15px;
+  }
+}

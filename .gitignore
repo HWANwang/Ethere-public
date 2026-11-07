@@ -1,0 +1,60 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p8
+secrets/
+private/
+local-config/
+
+# Personal and runtime data
+data/
+data-test/
+state/
+runtime/
+runtime-data/
+local-data/
+developer-workspace/
+logs/
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Dependencies and build output
+node_modules/
+.npm-cache/
+dist/
+build/
+.gradle/
+.gradle-user-home/
+.idea/
+.vscode/
+local.properties
+*.apk
+*.aab
+*.jks
+android/keystore.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+/.pm-workflow/
+/scripts/pm-runtime-config.js
+/scripts/.venv/
+/.handoff/
+/models/qwen3.5-2b/
+
+# Local memory models, personal evaluation sources and rollback snapshots
+/models/
+/memory-lab/fixtures/
+/memory-integration-checkpoints/
+/.agents/skills/
+/__pycache__/
+**/__pycache__/
+*.pyc
+/ethere-current*.png
+/ethere-final-top.png

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ethere</string>
+    <string name="title_activity_main">Ethere</string>
+    <string name="package_name">com.ethere.app</string>
+    <string name="custom_url_scheme">com.ethere.app</string>
+</resources>

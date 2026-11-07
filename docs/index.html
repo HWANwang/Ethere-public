@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#eef0f8">
+    <meta name="description" content="Ethere，不只回应此刻，也记得一路走来的你。">
+    <title>Ethere</title>
+    <link rel="icon" href="./app/brand-icon.png" type="image/png">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="showcase" id="try">
+      <div class="showcase__glow" aria-hidden="true"></div>
+      <div class="showcase__content">
+        <header class="site-brand"><span class="site-brand__mark"><img class="site-brand__symbol" src="./app/brand-icon.png" alt=""></span><span>Ethere</span></header>
+        <div class="hero-copy">
+          <h1>不只回应此刻，<br><em>也记得一路走来的你。</em></h1>
+          <p>聊天、记忆、学习和行动，发生在同一个地方。</p>
+        </div>
+        <section class="scenario-panel" id="scenarios" aria-label="体验场景">
+          <h2>选一个场景，看看 Ethere 怎么回应</h2>
+          <div class="scenario-grid">
+            <button type="button" data-scenario="checkin"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10h8m-8 3h5"/></svg></span>主动联系</button>
+            <button type="button" data-scenario="study"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5.5C9.7 4.4 6.9 4 3 4v14c4 0 6.7.4 9 1.5M12 5.5C14.3 4.4 17.1 4 21 4v14c-4 0-6.7.4-9 1.5m0-14v14"/></svg></span>继续学习</button>
+            <button type="button" data-scenario="reminder"><span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></span>约定提醒</button>
+            <button type="button" data-scenario="core"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2.8 8.2 9.2-8.2 9.2L3.8 12 12 2.8Z"/><path d="M12 8.5v7m-3.5-3.5h7"/></svg></span>核心记忆建议</button>
+            <button type="button" data-scenario="task"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 6h10M10 12h10M10 18h10M3.5 6l1.2 1.2L7 4.8M3.5 12l1.2 1.2L7 10.8M3.5 18l1.2 1.2L7 16.8"/></svg></span>任务与提醒</button>
+            <button type="button" data-scenario="document"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3.5h9l4 4V13M5 3.5v17h9M14 3.5V8h4M14 19.5l5-5 2 2-5 5-3 .5.5-2.5Z"/></svg></span>人设修订</button>
+            <button type="button" data-scenario="call"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5c.6-.6 1.6-.6 2.1.1l2 2.6c.4.5.4 1.2 0 1.7l-1.3 1.4a15 15 0 0 0 4.9 4.9l1.4-1.3c.5-.4 1.2-.4 1.7 0l2.6 2c.7.5.7 1.5.1 2.1l-1.4 1.5c-.6.7-1.5 1-2.4.9C10.6 20.9 3.1 13.4 3.5 6.9c0-.9.3-1.8 1-2.4L7 3.5Z"/></svg></span>语音通话</button>
+            <button type="button" data-scenario="attention"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 9a6.5 6.5 0 1 1 13 0c0 4 1.5 5.5 2.5 6.5H3c1-1 2.5-2.5 2.5-6.5ZM9.5 19a2.5 2.5 0 0 0 5 0"/></svg></span>监督弹窗</button>
+          </div>
+        </section>
+      </div>
+      <section class="phone-stage" aria-label="Ethere 应用">
+        <div class="phone">
+          <div class="phone__status" aria-hidden="true"><span>9:41</span><span class="phone__signals">● ◉ ▰</span></div>
+          <iframe data-demo-frame title="Ethere 交互页面" src="./app/index.html" loading="eager"></iframe>
+          <button class="phone__nav" data-demo-back type="button" aria-label="返回"><i aria-hidden="true"></i></button>
+        </div>
+      </section>
+      <a class="scroll-cue scroll-cue--hero" href="#architecture" aria-label="向下滚动，了解 Ethere 的工作方式"><span>向下了解</span><svg viewBox="0 0 24 32" aria-hidden="true"><path d="m4 4 8 8 8-8M4 15l8 8 8-8"/></svg></a>
+    </main>
+    <section class="architecture-screen architecture-screen--context" id="architecture" data-architecture-screen aria-labelledby="architecture-input-title">
+      <div class="architecture-screen__inner">
+        <div class="architecture-screen__copy">
+          <span class="architecture-screen__number">01 / 03</span>
+          <h2 id="architecture-input-title">接住当下</h2>
+          <p>Ethere 会带着人设、相处规则与记忆偏好回应当前对话；也会把值得留下的经历整理进时间线，让事件有迹可循。完整的思考、文字与图片，则留在空间。</p>
+        </div>
+        <div class="context-canvas" aria-label="Ethere 根据当前对话与已知偏好回应，并将经历沉淀到时间线和共同空间">
+          <article class="context-canvas__conversation">
+            <span>此刻的对话</span>
+            <strong>带着人设与偏好回应</strong>
+          </article>
+          <div class="context-canvas__destinations">
+            <article><span>时间线</span><strong>经历与事件</strong></article>
+            <article><span>空间</span><strong>完整思考与图片</strong></article>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#memory-architecture" aria-label="向下滚动，了解记忆机制"><span>继续向下</span><svg viewBox="0 0 24 32" aria-hidden="true"><path d="m4 4 8 8 8-8M4 15l8 8 8-8"/></svg></a>
+    </section>
+    <section class="architecture-screen architecture-screen--memory" id="memory-architecture" data-architecture-screen aria-labelledby="architecture-memory-title">
+      <div class="architecture-screen__inner">
+        <div class="architecture-screen__copy">
+          <span class="architecture-screen__number">02 / 03</span>
+          <h2 id="architecture-memory-title">让理解延续</h2>
+          <p>新线程开始时，人设、操作规则与经你确认的核心记忆会先载入；聊天中的当前话题则会按语义关联找回相关经历。你不必记得每一段过去，Ethere 可以在需要时回到当时的细节与来源。</p>
+        </div>
+        <div class="memory-canvas" aria-label="普通记忆会从 Watch 继续观察沉淀为 Remember 稳定经历；核心记忆由 Ethere 提议并由用户审批">
+          <section class="memory-flow memory-flow--ordinary" aria-label="普通记忆的沉淀与召回">
+            <span class="memory-flow__label">普通记忆 · 自动沉淀</span>
+            <div class="memory-flow__steps">
+              <div><span>原始记录</span><strong>聊天 · 时间线 · 空间</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>Watch</span><strong>继续观察</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>Remember</span><strong>稳定经历</strong></div>
+            </div>
+            <div class="memory-flow__recall"><span>当前话题</span><i aria-hidden="true">→</i><span>语义关联</span><i aria-hidden="true">→</i><strong>相关线索，可回看来源</strong></div>
+          </section>
+          <section class="memory-flow memory-flow--core" aria-label="核心记忆的独立审批流程">
+            <span class="memory-flow__label">核心记忆 · 独立审批</span>
+            <div class="memory-flow__steps">
+              <div><span>Ethere</span><strong>提出建议</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>你</span><strong>审批确认</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>新线程</span><strong>优先载入</strong></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#action-architecture" aria-label="向下滚动，了解提醒和主动联系"><span>继续向下</span><svg viewBox="0 0 24 32" aria-hidden="true"><path d="m4 4 8 8 8-8M4 15l8 8 8-8"/></svg></a>
+    </section>
+    <section class="architecture-screen architecture-screen--action architecture-screen--last" id="action-architecture" data-architecture-screen aria-labelledby="architecture-action-title">
+      <div class="architecture-screen__inner">
+        <div class="architecture-screen__copy">
+          <span class="architecture-screen__number">03 / 03</span>
+          <h2 id="architecture-action-title">把关心落到行动</h2>
+          <p>约定会同步到滴答清单与 Ethere 的提醒中：支持重复、延后、完成后停止，以及需要时的监督弹窗。到点后，它会按情境用消息、弹窗或来电联系你；没有约定时，Check-in 也会在随机间隔醒来，先看看近况，再决定联系或安静地完成允许的维护。</p>
+        </div>
+        <div class="action-canvas" aria-label="约定提醒会同步滴答清单并在需要时用消息、弹窗或来电触达；Check-in 会随机唤醒后查看近况">
+          <section class="action-flow action-flow--reminder">
+            <span class="action-flow__label">约定提醒</span>
+            <strong>滴答任务 <i aria-hidden="true">↔</i> Ethere 提醒</strong>
+            <div class="action-flow__tags"><span>重复</span><span>延后</span><span>完成后停止</span></div>
+            <div class="action-flow__delivery"><span>到点触达</span><strong>消息　弹窗　来电</strong></div>
+          </section>
+          <section class="action-flow action-flow--checkin">
+            <span class="action-flow__label">Check-in · 随机醒来</span>
+            <strong>先看看近况</strong>
+            <p>可以联系你，也可以安静维护。</p>
+          </section>
+        </div>
+      </div>
+      <a class="back-to-demo" href="#scenarios">回到场景体验 <span aria-hidden="true">↗</span></a>
+    </section>
+  </body>
+</html>

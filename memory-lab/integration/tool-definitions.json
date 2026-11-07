@@ -1,0 +1,7 @@
+[
+  {"name":"search_memories","description":"按当前话题主动搜索长期记忆。自动注入不足或用户提到模糊往事时使用。","parameters":{"type":"object","properties":{"query":{"type":"string"},"limit":{"type":"integer","minimum":1,"maximum":10,"default":5},"include_superseded":{"type":"boolean","default":false},"memory_type":{"type":"string","enum":["fact","judgment"]},"time_range":{"type":"object","properties":{"from":{"type":"string"},"to":{"type":"string"}}}},"required":["query"]}},
+  {"name":"get_memory","description":"读取一条完整记忆及最近变更摘要。","parameters":{"type":"object","properties":{"memory_id":{"type":"string"}},"required":["memory_id"]}},
+  {"name":"get_related_memories","description":"沿一层永久关系查看相关、冲突或被取代记忆。","parameters":{"type":"object","properties":{"memory_id":{"type":"string"}},"required":["memory_id"]}},
+  {"name":"get_memory_evidence","description":"查看记忆对应的原始聊天、时间线或空间证据摘录。","parameters":{"type":"object","properties":{"memory_id":{"type":"string"},"full":{"type":"boolean","default":false}},"required":["memory_id"]}},
+  {"name":"report_memory_issue","description":"提交记忆错误、过时、混合、缺少上下文或用户要求遗忘的线索，由后台整理处理。","parameters":{"type":"object","properties":{"memory_id":{"type":"string"},"issue_type":{"type":"string","enum":["incorrect","outdated","mixed","missing_context","forget_requested"]},"current_user_message_id":{"type":"string"},"note":{"type":"string"}},"required":["memory_id","issue_type"]}}
+]

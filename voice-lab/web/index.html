@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ee">
+  <title>Ethere Voice Lab</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/stream.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true"><span></span></div>
+      <div class="brand-copy"><small>ETHERE / EXPERIMENT 01</small><h1>语音对话实验室</h1></div>
+      <span class="privacy-pill">独立测试</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div><p class="eyebrow">听见它说话</p><h2>先试声音，再决定要不要做电话。</h2></div>
+        <p>这页不会连接 Ethere 的正式聊天或记忆。回复由独立的 Codex 测试线程生成；Fish 音频在云端合成，语音识别只在这台电脑运行。</p>
+      </section>
+
+      <section class="setup" aria-labelledby="setup-heading">
+        <div class="section-heading"><span class="step">01</span><h3 id="setup-heading">试听声音</h3></div>
+        <div class="voice-choice" role="radiogroup" aria-label="语音引擎">
+          <label class="voice-card"><input type="radio" name="engine" value="fish" checked><span class="check"></span><span><strong>Fish Audio</strong><small>你选的音色 · 在线免费档</small></span><span class="tag">在线</span></label>
+        </div>
+        <div id="health" class="health" aria-live="polite">正在检查测试环境…</div>
+        <div class="sample-row">
+          <label for="sample">先听一句试试</label>
+          <div class="sample-field"><input id="sample" value="早上好。今天不用着急，我们慢慢开始。" maxlength="400"><button id="sample-play" type="button">合成试听 <span aria-hidden="true">↗</span></button></div>
+          <p>试听不会消耗 Codex 对话；文字会发送到 Fish Audio 合成。</p>
+        </div>
+      </section>
+
+      <section class="conversation" aria-labelledby="conversation-heading">
+        <div class="section-heading"><span class="step">02</span><h3 id="conversation-heading">试一次来回</h3><span class="section-note">说话 → 识别 → 回复 → 朗读</span></div>
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="empty-state"><span class="empty-symbol">✳</span><strong>从一句话开始</strong><p>可以直接打字，也可以点麦克风。连续模式会在你停顿后自动发送，等它说完再听你下一句。</p></div>
+        </div>
+        <div class="composer">
+          <button id="mic" class="mic-button" type="button" aria-label="开始录音" title="点击录音，再点一次发送">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>
+          </button>
+          <textarea id="draft" rows="1" maxlength="1000" placeholder="或者在这里打字…" aria-label="输入消息"></textarea>
+          <button id="send" class="send-button" type="button" aria-label="发送消息">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 17-7-7 17-2-8-8-2Z"/><path d="m11 13 9-9"/></svg>
+          </button>
+        </div>
+        <div class="conversation-footer"><label class="switch-line"><input id="continuous" type="checkbox"><span class="switch"></span><span>连续轮替对话</span></label><label class="switch-line"><input id="stream-mode" type="checkbox"><span class="switch"></span><span>实验：流式显示与长回复分段朗读</span></label><span id="listen-state" class="listen-state">待机</span><button id="stop-audio" type="button" class="text-button">停止播放</button></div>
+      </section>
+
+      <section class="notes"><span>测试说明</span><p>连续模式会等约 2.7 秒停顿再发送；回复或朗读时直接说话可尝试打断，点麦克风则能可靠地立即打断。第一次使用会请求麦克风权限。测试时先用非隐私话题；录音不会写入 Ethere。</p></section>
+    </main>
+    <footer>VOICE LAB · LOCAL ONLY <span>127.0.0.1</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+
