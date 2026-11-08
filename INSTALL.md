@@ -14,13 +14,13 @@ This is a source project, not a hosted chatbot. The main application runs on you
 ## First run
 
 ```powershell
-git clone https://github.com/HWANwang/Ethere-public.git
+git clone https://github.com/MiraValeLab/Ethere-public.git
 Set-Location Ethere-public
 npm ci
 npm test
 ```
 
-Until this candidate is published, run the same commands from its local snapshot directory instead of cloning. The `.env.example` file is documentation only: Node does **not** automatically read `.env` here. Set variables in the shell or your own process manager, and never commit a populated `.env`.
+The `.env.example` file is documentation only: Node does **not** automatically read `.env` here. Set variables in the shell or your own process manager, and never commit a populated `.env`.
 
 On Windows PowerShell, start the main server with an explicit project-local data directory. Pick ports that are free on your machine; these sample ports deliberately differ from the maintainer's development ports.
 

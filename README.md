@@ -6,7 +6,7 @@ Ethere 是一个 local-first 的个人 AI 助手原型：它把持续对话、�
 
 ## 在线体验
 
-**[打开交互演示 →](https://hwanwang.github.io/Ethere-public/)**
+**[打开交互演示 →](https://miravalelab.github.io/Ethere-public/)**
 
 演示使用虚构数据，完整呈现聊天、空间、时间线、记忆架构、学习计划、提醒、语音来电和监督弹窗等交互路径。
 
